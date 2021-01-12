@@ -49,6 +49,25 @@ export default class Food {
     this.calculateNutrients(['calories', 'fat', 'carbohydrate', 'protein']);
   }
 
+  changeCalories(calories: number) {
+    this.currentValues.calories = calories;
+    this.currentValues.amount = this.calculateAmountFromNutrition('calories');
+    this.calculateNutrients(['fat', 'carbohydrate', 'protein']);
+  }
+
+  changeFat(fat: number) {
+    this.currentValues.fat = fat;
+    this.currentValues.amount = this.calculateAmountFromNutrition('fat');
+    this.calculateNutrients(['calories', 'carbohydrate', 'protein']);
+  }
+
+  private calculateAmountFromNutrition(nutrition: string) {
+    return Math.ceil(
+      (this.currentValues[nutrition] * this.baseValues.amount) /
+        this.baseValues[nutrition]
+    );
+  }
+
   private calculateNutrients(nutrients: string[]) {
     nutrients.map((nutrient) => {
       this.currentValues[nutrient] = this.calculateNutritionFromAmount(
