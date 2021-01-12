@@ -1,8 +1,8 @@
 {
-  "name": "nutrition",
+  "name": "@flagares/nutrition",
   "version": "1.0.0",
   "description": "A TypeScript package for NodeJS projects",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest --watch --no-cache --coverage"
