@@ -165,5 +165,41 @@ describe('Food Class', () => {
       expect(carbohydrate).toEqual(2250);
       expect(protein).toEqual(5);
     });
+
+    test('change protein and calculate current values', () => {
+      food.changeProtein(103);
+
+      const {
+        calories,
+        amount,
+        fat,
+        carbohydrate,
+        protein,
+      } = food.getCurrentValues();
+
+      expect(protein).toEqual(103);
+      expect(amount).toEqual(10300);
+      expect(fat).toEqual(412);
+      expect(calories).toEqual(13390);
+      expect(carbohydrate).toEqual(46350);
+    });
+
+    test('change carbohydrate and calculate current values', () => {
+      food.changeCarbohydrate(11);
+
+      const {
+        calories,
+        amount,
+        fat,
+        carbohydrate,
+        protein,
+      } = food.getCurrentValues();
+
+      expect(carbohydrate).toEqual(11);
+      expect(amount).toEqual(3);
+      expect(protein).toEqual(1);
+      expect(fat).toEqual(1);
+      expect(calories).toEqual(4);
+    });
   });
 });
