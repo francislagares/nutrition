@@ -1,6 +1,6 @@
 {
   "name": "@flagares/nutrition",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A TypeScript package for NodeJS projects",
   "main": "dist/index.js",
   "scripts": {
