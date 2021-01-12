@@ -99,7 +99,7 @@ describe('Food Class', () => {
     }
   });
 
-  test('Create new food, change amount and calculate calories', () => {
+  test('Create new food, change amount and calculate current values', () => {
     const baseValues = {
       amount: 100,
       fat: 30,
@@ -111,5 +111,8 @@ describe('Food Class', () => {
     food.changeAmount(87);
 
     expect(food.getCurrentValues().calories).toEqual(108);
+    expect(food.getCurrentValues().fat).toEqual(27);
+    expect(food.getCurrentValues().carbohydrate).toEqual(35);
+    expect(food.getCurrentValues().protein).toEqual(57);
   });
 });
